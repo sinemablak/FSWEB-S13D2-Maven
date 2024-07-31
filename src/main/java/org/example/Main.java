@@ -11,6 +11,9 @@ public class Main {
        System.out.println(isPerfectNumber(5));
        System.out.println(isPerfectNumber(-1));
        System.out.println("************************");
+       System.out.println(numberToWords(123));
+       System.out.println(numberToWords(1010));
+       System.out.println(numberToWords(-12));
     }
 
     public static boolean isPalindrome(int number) {
@@ -39,6 +42,49 @@ public class Main {
             }
         }
         return sum==number;
+    }
+    public static String numberToWords(int number) {
+        if (number < 0) {
+            return "Invalid Value";
+        }
+        char[] digits = String.valueOf(number).toCharArray();
+        String numToText = "";
+        for (char digit : digits) {
+            switch (digit) {
+                case '0':
+                    numToText += "Zero ";
+                    break;
+                case '1':
+                    numToText += "One ";
+                    break;
+                case '2':
+                    numToText += "Two ";
+                    break;
+                case '3':
+                    numToText += "Three ";
+                    break;
+                case '4':
+                    numToText += "Four ";
+                    break;
+                case '5':
+                    numToText += "Five ";
+                    break;
+                case '6':
+                    numToText += "Six ";
+                    break;
+                case '7':
+                    numToText += "Seven ";
+                    break;
+                case '8':
+                    numToText += "Eight ";
+                    break;
+                case '9':
+                    numToText += "Nine ";
+                    break;
+            }
+
+        }
+        return numToText.trim();
     }
 
 }
